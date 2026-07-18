@@ -1,0 +1,77 @@
+# Ignore files for the entire repository
+
+# Backend
+backend/target/
+backend/out/
+backend/.idea/
+backend/*.iml
+backend/.settings/
+backend/.classpath
+backend/.project
+backend/.factorypath
+backend/.DS_Store
+backend/.vscode/
+backend/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.vscode/
+frontend/.idea/
+frontend/tsconfig.tsbuildinfo
+frontend/npm-debug.log
+frontend/yarn-error.log
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# Git
+.git/
+
+# Misc
+.env
+.env.local
+.env.production
+.env.*.local
+.cache/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+*.jar
+*.war
+
+# Java
+*.class
+.gradle/
+gradle/

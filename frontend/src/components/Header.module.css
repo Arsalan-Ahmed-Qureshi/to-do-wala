@@ -1,0 +1,137 @@
+.header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  padding: 32px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleSection {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filterBtn {
+  padding: 10px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.filterBtn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.filterBtn.active {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+.logoutBtn {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.logoutBtn:hover {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 24px 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .leftSection {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .filters {
+    gap: 8px;
+  }
+
+  .filterBtn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .userSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

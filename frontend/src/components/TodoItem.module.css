@@ -1,0 +1,111 @@
+.todoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.todoItem:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.todoItem.completed {
+  opacity: 0.7;
+  background-color: #f3f4f6;
+}
+
+.checkbox {
+  margin-top: 4px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.todoItem.completed .title {
+  text-decoration: line-through;
+  color: var(--color-text-secondary);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.priority {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.dueDate {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.editBtn {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.deleteBtn {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.deleteBtn:hover {
+  background-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .todoItem {
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
