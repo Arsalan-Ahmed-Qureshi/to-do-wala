@@ -44,6 +44,15 @@ public class Todo {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
     
+    @Column(nullable = true)
+    private Long version = 0L;
+    
+    @Column(nullable = true)
+    private Boolean isDeleted = false;
+    
+    @Column(nullable = true)
+    private LocalDateTime syncedAt;
+    
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

@@ -31,6 +31,12 @@ public class TodoDTO {
     
     private LocalDateTime updatedAt;
     
+    private Long version;
+    
+    private Boolean isDeleted;
+    
+    private LocalDateTime syncedAt;
+    
     public static TodoDTO fromEntity(Todo todo) {
         return TodoDTO.builder()
             .id(todo.getId())
@@ -42,6 +48,9 @@ public class TodoDTO {
             .userId(todo.getUserId())
             .createdAt(todo.getCreatedAt())
             .updatedAt(todo.getUpdatedAt())
+            .version(todo.getVersion())
+            .isDeleted(todo.getIsDeleted())
+            .syncedAt(todo.getSyncedAt())
             .build();
     }
     
@@ -54,6 +63,8 @@ public class TodoDTO {
             .priority(Todo.Priority.valueOf(this.priority))
             .dueDate(this.dueDate)
             .userId(this.userId)
+            .version(this.version != null ? this.version : 0L)
+            .isDeleted(this.isDeleted != null ? this.isDeleted : false)
             .build();
     }
 }
