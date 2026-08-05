@@ -183,6 +183,9 @@ const App = () => {
   const dispatch = useDispatch();
   const [isAppReady, setIsAppReady] = React.useState(false);
 
+  // Monitor network status
+  useNetworkStatus();
+
   // Initialize app on mount
   useEffect(() => {
     const initializeApp = async () => {
@@ -196,9 +199,6 @@ const App = () => {
           const user = JSON.parse(userStr);
           dispatch(setUser(user));
         }
-
-        // Monitor network status
-        useNetworkStatus();
       } catch (error) {
         console.error('App initialization error:', error);
       } finally {
