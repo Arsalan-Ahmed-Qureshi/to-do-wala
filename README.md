@@ -268,11 +268,34 @@ npm audit                 # Frontend
 ```
 
 ## 🚀 Deployment
+### Docker
+The backend now includes Docker support and a Docker Compose setup to run the API with PostgreSQL for development.
 
-### Docker (Coming Soon)
-- Backend Dockerfile
-- Frontend Dockerfile
-- Docker Compose setup
+Files added:
+- `backend/Dockerfile`
+- `backend/.dockerignore`
+- `docker-compose.yml` (project root)
+
+Build and run the backend image (connect to a host DB or use Compose):
+```bash
+docker build -t todotask-backend:latest backend
+docker run \
+  -e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/todotask_db \
+  -e SPRING_DATASOURCE_USERNAME=postgres \
+  -e SPRING_DATASOURCE_PASSWORD=postgres \
+  -p 8080:8080 \
+  todotask-backend:latest
+```
+
+Run backend + Postgres with Docker Compose (recommended for development):
+```bash
+docker compose up --build
+```
+
+Notes:
+- The application reads DB configuration from environment variables: `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, and `SPRING_DATASOURCE_PASSWORD`.
+- When using Compose the backend connects to the DB at `jdbc:postgresql://db:5432/todotask_db` (set in `docker-compose.yml`).
+- Use `host.docker.internal` when the database runs on your host and a container needs to reach it.
 
 ### Cloud Deployment
 - AWS ECS
