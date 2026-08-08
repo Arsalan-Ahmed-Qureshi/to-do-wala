@@ -17,3 +17,4 @@ local.properties
 
 # Gradle wrapper
 !gradle-wrapper.jar
+!gradle-wrapper.properties
